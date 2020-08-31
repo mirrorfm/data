@@ -6,7 +6,7 @@ Anyone can add new channels/playlists to www.mirror.fm
 
  - where channel tracks seem to be formatted correctly, for example: Artist – Track
  - where most channel tracks are single tracks, not "full EP", "full album" or a mix.
- - with at least 100 tracks
+ - with at least 50 tracks
  - that don't belong to a single artist
 
 ### To submit a YouTube channel:
