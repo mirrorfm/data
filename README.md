@@ -12,7 +12,7 @@ Please only submit channels or labels following these criteria.
  - most channel tracks are single tracks, not "full EP", "full album" or a mix
  - have a decent amount of tracks (~50+) 
  - doesn't belong to a single artist
- - doesn't have a matching record label on [Discogs](https://www.discogs.com/search/?type=label), in which case it should be added as a [Discogs labels](https://github.com/mirrorfm/data#discogs-labels)
+ - doesn't have a matching record label on [discogs.com](https://www.discogs.com/search/?type=label), in which case it should be added as a [Discogs label](https://github.com/mirrorfm/data#discogs-labels)
 
 ### Discogs labels
 
