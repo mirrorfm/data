@@ -1,6 +1,6 @@
 # Mirror.FM data 🎵
 
-Anyone can add new YouTube channels or Discogs labels as playlists on www.mirror.fm
+Anyone can add new YouTube channels or Discogs labels as playlists on www.mirror.fm. 100% automatic
 
 ## Submitting guidelines
 
@@ -26,3 +26,7 @@ It's quick and easy:
  - add the channel or label ID, name and link to the end of the file
  - once approved your Spotify playlist will sync automatically and will be added to the mirror.fm [Spotify profile](https://open.spotify.com/user/xlqeojt6n7on0j7coh9go8ifd?si=StuR-GbuTeCJUSNzHKN5gg)
 
+## How does it work
+
+ - Submissions in the current repo triggers other automations in https://github.com/mirrorfm/mirrorfm/tree/master/functions
+ - YouTube track names are cleaned up using https://github.com/mirrorfm/trackfilter/, feel free to [contribute](https://github.com/mirrorfm/trackfilter/blob/master/tests/test_trackfilter.py#L11)
