@@ -1,0 +1,18 @@
+name: CSV Lint
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: csv lint
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run csv-lint on YouTube channels
+      uses: blackstar257/docker-csvlint@master
+      env:
+        ACTION_STATE_NAME: "youtube-channels.csv"
+    - name: Run csv-lint on Discogs labels
+      uses: blackstar257/docker-csvlint@master
+      env:
+        ACTION_STATE_NAME: "discogs-labels.csv"
