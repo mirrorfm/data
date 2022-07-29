@@ -24,6 +24,7 @@ It's quick and easy:
 
  - edit [discogs-labels.csv](https://github.com/mirrorfm/data/blob/master/discogs-labels.csv) or [youtube-channels.csv](https://github.com/mirrorfm/data/blob/master/youtube-channels.csv) on Github
  - add the channel or label ID, name and link to the end of the file
+   - to find the Youtube channel ID I recommend https://commentpicker.com/youtube-channel-id.php
  - create a pull request
  - once approved your Spotify playlist will sync automatically and will be added to the mirror.fm [Spotify profile](https://open.spotify.com/user/xlqeojt6n7on0j7coh9go8ifd?si=StuR-GbuTeCJUSNzHKN5gg)
 
