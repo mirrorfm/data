@@ -1,6 +1,5 @@
 name: CSV Lint
-
-on: [push, pull_request]
+on: push
 
 jobs:
   test:
@@ -8,15 +7,15 @@ jobs:
     name: csv lint
     steps:
     - uses: actions/checkout@v1
-    - name: Read template from file
-      id: template
-      uses: traversals-analytics-and-intelligence/file-reader-action@master
+    - name: Read package.json
+      id: package
+      uses: juliangruber/read-file-action@v1
       with:
-        file: "youtube-channels.csv"
-    - name: Hello world action step
-      id: hello
+        path: youtube-channels.csv
+    - name: Check CSV
+      id: check-csv
       uses: stephanebruckert/csv-contribution-action@main
       with:
         file-content: ${{ steps.template.outputs.content }}
     - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+      run: echo "The time was ${{ steps.check-csv.outputs.time }}"
