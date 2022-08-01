@@ -13,7 +13,7 @@ jobs:
       with:
         path: youtube-channels.csv
     - name: File contents
-      run: echo "${ steps.read-csv.outputs.contents }"
+      run: echo "${{ steps.read-csv.outputs.contents }}"
     - name: Check CSV
       id: check-csv
       uses: stephanebruckert/csv-contribution-action@main
