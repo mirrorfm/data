@@ -7,9 +7,8 @@ jobs:
     name: csv lint
     steps:
     - uses: actions/checkout@v1
-    - name: Read package.json
-      id: package
-      uses: juliangruber/read-file-action@v1
+    - name: "Read file contents"
+      uses: andstor/file-reader-action@v1
       with:
         path: youtube-channels.csv
     - name: Check CSV
@@ -17,5 +16,5 @@ jobs:
       uses: stephanebruckert/csv-contribution-action@main
       with:
         file-content: ${{ steps.template.outputs.content }}
-    - name: Get the output time
-      run: echo "The time was ${{ steps.check-csv.outputs.time }}"
+    - name: Get the output
+      run: echo "${{ steps.check-csv.outputs.time }}"
