@@ -16,10 +16,15 @@ jobs:
       uses: blackstar257/docker-csvlint@master
       env:
         ACTION_STATE_NAME: "discogs-labels.csv"
+    - name: Read template from file
+      id: template
+      uses: traversals-analytics-and-intelligence/file-reader-action@master
+      with:
+        file: "youtube-channels.csv"
     - name: Hello world action step
       id: hello
       uses: stephanebruckert/csv-contribution-action@main
       with:
-        who-to-greet: 'Mona the Octocat'
+        file-content: ${{ steps.template.outputs.content }}
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
