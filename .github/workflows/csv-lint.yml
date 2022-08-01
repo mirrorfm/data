@@ -4,7 +4,7 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: csv lint
+    name: CSV lint
     steps:
     - uses: actions/checkout@v1
     - name: "Read file contents"
