@@ -18,7 +18,7 @@ jobs:
         ACTION_STATE_NAME: "discogs-labels.csv"
     - name: Hello world action step
       id: hello
-      uses: octocat/hello-world-javascript-action@v1.1
+      uses: stephanebruckert/csv-contribution
       with:
         who-to-greet: 'Mona the Octocat'
     - name: Get the output time
