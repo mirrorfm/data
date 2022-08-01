@@ -18,6 +18,6 @@ jobs:
       id: check-csv
       uses: stephanebruckert/csv-contribution-action@main
       with:
-        file-content: "${ steps.read-csv.outputs.contents }"
+        file-content: "${{ steps.read-csv.outputs.contents }}"
     - name: Get the output
       run: echo "${{ steps.check-csv.outputs.time }}"
