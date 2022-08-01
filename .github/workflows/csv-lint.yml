@@ -8,14 +8,6 @@ jobs:
     name: csv lint
     steps:
     - uses: actions/checkout@v1
-    - name: Run csv-lint on YouTube channels
-      uses: blackstar257/docker-csvlint@master
-      env:
-        ACTION_STATE_NAME: "youtube-channels.csv"
-    - name: Run csv-lint on Discogs labels
-      uses: blackstar257/docker-csvlint@master
-      env:
-        ACTION_STATE_NAME: "discogs-labels.csv"
     - name: Read template from file
       id: template
       uses: traversals-analytics-and-intelligence/file-reader-action@master
