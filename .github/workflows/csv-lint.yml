@@ -1,18 +1,35 @@
 name: CSV Lint
-
-on: [push, pull_request]
+on: push
 
 jobs:
-  test:
+  youtube-lint:
     runs-on: ubuntu-latest
-    name: csv lint
+    name: Youtube CSV lint
     steps:
     - uses: actions/checkout@v1
-    - name: Run csv-lint on YouTube channels
-      uses: blackstar257/docker-csvlint@master
-      env:
-        ACTION_STATE_NAME: "youtube-channels.csv"
-    - name: Run csv-lint on Discogs labels
-      uses: blackstar257/docker-csvlint@master
-      env:
-        ACTION_STATE_NAME: "discogs-labels.csv"
+    - name: "Read file contents"
+      id: read-csv
+      uses: andstor/file-reader-action@v1
+      with:
+        path: youtube-channels.csv
+    - name: Find duplicate IDs
+      id: check-csv
+      uses: stephanebruckert/csv-contribution-action@main
+      with:
+        file-content: "${{ steps.read-csv.outputs.contents }}"
+
+  discogs-lint:
+    runs-on: ubuntu-latest
+    name: Discogs CSV lint
+    steps:
+      - uses: actions/checkout@v1
+      - name: "Read file contents"
+        id: read-csv
+        uses: andstor/file-reader-action@v1
+        with:
+          path: discogs-labels.csv
+      - name: Find duplicate IDs
+        id: check-csv
+        uses: stephanebruckert/csv-contribution-action@main
+        with:
+          file-content: "${{ steps.read-csv.outputs.contents }}"
