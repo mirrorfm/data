@@ -14,7 +14,7 @@ jobs:
         path: youtube-channels.csv
     - name: Find duplicate IDs
       id: check-csv
-      uses: stephanebruckert/csv-contribution-action@main
+      uses: stephanebruckert/csv-contribution-action@1.0.0
       with:
         file-content: "${{ steps.read-csv.outputs.contents }}"
         find-duplicates: "true"
@@ -31,7 +31,7 @@ jobs:
           path: discogs-labels.csv
       - name: Find duplicate IDs
         id: check-csv
-        uses: stephanebruckert/csv-contribution-action@main
+        uses: stephanebruckert/csv-contribution-action@1.0.0
         with:
           file-content: "${{ steps.read-csv.outputs.contents }}"
           find-duplicates: "true"
