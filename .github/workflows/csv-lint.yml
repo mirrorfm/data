@@ -20,7 +20,7 @@ jobs:
 
   discogs-lint:
     runs-on: ubuntu-latest
-    name: Youtube CSV lint
+    name: Discogs CSV lint
     steps:
       - uses: actions/checkout@v1
       - name: "Read file contents"
