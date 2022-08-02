@@ -2,9 +2,9 @@ name: CSV Lint
 on: push
 
 jobs:
-  test:
+  youtube-lint:
     runs-on: ubuntu-latest
-    name: CSV lint
+    name: Youtube CSV lint
     steps:
     - uses: actions/checkout@v1
     - name: "Read file contents"
@@ -12,10 +12,24 @@ jobs:
       uses: andstor/file-reader-action@v1
       with:
         path: youtube-channels.csv
-    - name: Check CSV
+    - name: Find duplicate IDs
       id: check-csv
       uses: stephanebruckert/csv-contribution-action@main
       with:
         file-content: "${{ steps.read-csv.outputs.contents }}"
-    - name: Get the output
-      run: echo "${{ steps.check-csv.outputs.time }}"
+
+  discogs-lint:
+    runs-on: ubuntu-latest
+    name: Youtube CSV lint
+    steps:
+      - uses: actions/checkout@v1
+      - name: "Read file contents"
+        id: read-csv
+        uses: andstor/file-reader-action@v1
+        with:
+          path: discogs-labels.csv
+      - name: Find duplicate IDs
+        id: check-csv
+        uses: stephanebruckert/csv-contribution-action@main
+        with:
+          file-content: "${{ steps.read-csv.outputs.contents }}"
