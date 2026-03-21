@@ -29,9 +29,10 @@ jobs:
         uses: andstor/file-reader-action@v1
         with:
           path: discogs-labels.csv
-      - name: Find duplicate IDs
+      - name: Validate CSV
         id: check-csv
-        uses: stephanebruckert/csv-contribution-action@1.0.0
+        uses: mirrorfm/csv-contribution-action@1.0.2
         with:
           file-content: "${{ steps.read-csv.outputs.contents }}"
           find-duplicates: "true"
+          validate-id-format: "numeric"
